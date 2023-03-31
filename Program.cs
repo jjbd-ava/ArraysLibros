@@ -225,7 +225,7 @@ namespace Libros
                 case '1':
                     for(int i=0; i<libreria.Length; i++)
                     {
-                        if (libreria[i].NumPaginas > busqueda)
+                        if (libreria[i] != null && libreria[i].NumPaginas > busqueda)
                         {
                             Console.WriteLine($"{libreria[i]} páginas.");
                             encontrado = true;
@@ -236,7 +236,7 @@ namespace Libros
                 case '2':
                     for (int i = 0; i < libreria.Length; i++)
                     {
-                        if (libreria[i].NumPaginas < busqueda)
+                        if (libreria[i] != null && libreria[i].NumPaginas < busqueda)
                         {
                             Console.WriteLine($"{libreria[i]} páginas.");
                             encontrado = true;
@@ -247,7 +247,7 @@ namespace Libros
                 case '3':
                     for (int i = 0; i < libreria.Length; i++)
                     {
-                        if (libreria[i].NumPaginas == busqueda)
+                        if (libreria[i] != null && libreria[i].NumPaginas == busqueda)
                         {
                             Console.WriteLine($"{libreria[i]} páginas.");
                             encontrado = true;
@@ -267,14 +267,14 @@ namespace Libros
             bool encontrado = false;
             for (int i = 0; i<libreria.Length; i++)
             {
-                if (libreria[i].Autor == busqueda)
+                if (libreria[i] != null && libreria[i].Autor == busqueda)
                 {
                     encontrado = true;
                     Console.WriteLine($"Tenemos el libro {libreria[i]} en la estantería {i}");
                 }
                 else
                 {
-                    if (libreria[i].Autor.Contains(busqueda))
+                    if (libreria[i] != null && libreria[i].Autor.Contains(busqueda))
                     {
                         encontrado = true;
                         Console.WriteLine($"Tenemos un libro de un autor parecido: {libreria[i]} en la estantería {i}");
@@ -292,14 +292,14 @@ namespace Libros
             bool encontrado = false;
             for (int i = 0; i < libreria.Length; i++)
             {
-                if (libreria[i].Titulo == busqueda)
+                if (libreria[i]!=null && libreria[i].Titulo == busqueda) //TODO buscar el
                 {
                     encontrado = true;
                     Console.WriteLine($"Tenemos el libro {libreria[i]} en la estantería {i}");
                 }
                 else
                 {
-                    if (libreria[i].Titulo.Contains(busqueda))
+                    if (libreria[i] != null && libreria[i].Titulo.Contains(busqueda))
                     {
                         encontrado = true;
                         Console.WriteLine($"Tenemos un libro con un título parecido: {libreria[i]} en la estantería {i}");
